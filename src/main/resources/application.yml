@@ -1,0 +1,29 @@
+microservices:
+  prs:
+    platos-carta: http://localhost:9095/api/v1/productos-carta
+    platos-menu:  http://localhost:9999/comida
+
+
+
+
+server:
+  port: 8086
+
+spring:
+  application:
+    name: menuRestaurant
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/menuRestaurant
+      auto-index-creation: false
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+
+
+
